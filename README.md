@@ -83,7 +83,7 @@ Framework: Pytest
 Project Setup:
 -----------------
 1) Clone the repository:
-      git clone <repository_url>
+      git clone https://github.com/Sajjanrepo/AmazonEcommerce.git
 2) cd <project_folder>
 3)Install the necessary Python dependencies:
    pip install -r requirements.txt

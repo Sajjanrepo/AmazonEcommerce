@@ -99,3 +99,6 @@ Assumptions:
 --------------
 1) All the search product, if its present in website then Test case will pass as expected and if it is not available then Test case will fail as expected.
 
+Note:
+    CSV File is present in testdata directory
+

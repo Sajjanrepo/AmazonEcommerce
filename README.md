@@ -80,6 +80,13 @@ Tools & Frameworks:
 Tools : Selenium
 Framework: Pytest
 
+Project Setup:
+-----------------
+1) Clone the repository:
+      git clone <repository_url>
+2) cd <project_folder>
+3)Install the necessary Python dependencies:
+   pip install -r requirements.txt
 
 Running the Script:
 ----------------------

@@ -42,15 +42,14 @@ This project involves creating Selenium automation scripts in Python to validate
 
 ### Project Setup
 1. **Clone the Repository:**
-
    git clone https://github.com/Sajjanrepo/AmazonEcommerce.git
 
 2. Navigate to the project folder:
-   
-   cd <project_folder>
+   cd <repository_folder>
+   python -m venv venv
+   source venv\Scripts\activate
    
 4. Install the necessary Python dependencies:
-   
    pip install -r requirements.txt
   
 
@@ -69,7 +68,7 @@ This project involves creating Selenium automation scripts in Python to validate
            java -jar selenium-server-<version>.jar node
 
    - After starting the hub and node, execute the tests in parallel:
-     pytest -s -v .\testcases\<file_test.py> -n <number of parallel processes (e.g., 2)>
+     pytest -s -v .\testcases\<file_test.py> -n <number of parallel processes (e.g., 2)> --browser <browser_name>
 
 ---
 
@@ -85,7 +84,10 @@ This project involves creating Selenium automation scripts in Python to validate
 
 2. **Enhancements:**
    - Include detailed comments in the CSV file for each test case.
+   - Make the changes in conftest.py file for running test script for parallel testing (Just uncomment the commented line under browser and change the hub ip as per your hub)
+   - Report will be generated with filename initials under reports directory
 ---
 
 This project validates key functionalities of Amazon's search and crawling features, providing a robust and scalable automation testing framework using Python and Selenium.
+
 

@@ -2,16 +2,16 @@ import os
 import pytest
 from selenium import webdriver
 from datetime import datetime
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
 
 
 @pytest.fixture(scope="session")
 def setup(browser):
-    driver = None
     logger = LogGen.loggen()
 
-    # Setup browser
     driver = get_driver(browser, logger)
 
     if driver:
@@ -28,22 +28,33 @@ def setup(browser):
 
 
 def get_driver(browser, logger):
-    options = None
-
     if browser == "chrome":
-        options = webdriver.ChromeOptions()
-        return webdriver.Remote(command_executor="http://192.168.1.20:4444/wd/hub", options=options)
+        chrome_driver_path = ReadConfig.getchromedriver()
+        options = Options()
+        options.binary_location = ReadConfig.getChromePath()
+        serv_obj = Service(executable_path=chrome_driver_path)
+        driver = webdriver.Firefox(service=serv_obj, options=options)
+        return driver
+
+        # For parallel run on Selenium Grid
+        # options = webdriver.ChromeOptions()
+        # options.binary_location=ReadConfig.getChromePath()
+        # return webdriver.Remote(command_executor="http://192.168.1.5:4444/wd/hub", options=options)
 
     elif browser == "firefox":
-        options = webdriver.FirefoxOptions()
+        firefox_driver_path = ReadConfig.getFirefoxdriver()
+        options = Options()
         options.binary_location = ReadConfig.getFirefoxPath()
-        return webdriver.Remote(command_executor="http://192.168.1.20:4444/wd/hub", options=options)
+        serv_obj = Service(executable_path=firefox_driver_path)
+        driver = webdriver.Firefox(service=serv_obj, options=options)
+        return driver
 
-    elif browser == "edge":
-        options = webdriver.EdgeOptions()
-        return webdriver.Remote(command_executor="http://192.168.1.20:4444/wd/hub", options=options)
+        # For parallel run on Selenium Grid
+        # options = webdriver.FirefoxOptions()
+        # options.binary_location = ReadConfig.getFirefoxPath()
+        # return webdriver.Remote(command_executor="http://192.168.1.5:4444/wd/hub", options=options)
 
-    logger.error("Invalid browser name. Please provide 'chrome', 'firefox', or 'edge'")
+    logger.error("Invalid browser name. Please provide 'chrome', 'firefox'")
     return None
 
 
@@ -59,8 +70,21 @@ def browser(request):
 # Configure reports with timestamp and create reports directory if it doesn't exist
 @pytest.hookimpl(optionalhook=True)
 def pytest_configure(config):
-    test_file_name = os.path.splitext(os.path.basename(config.args[0]))[0]
+    import os
+    from datetime import datetime
+
+    # Get the test file name from the command-line arguments
+    if config.args:
+        test_file_name = os.path.splitext(os.path.basename(config.args[0]))[0]
+    else:
+        test_file_name = "test_report"  # Default name if no specific file is passed
+
     report_dir = os.path.abspath(os.curdir) + "\\reports\\"
     os.makedirs(report_dir, exist_ok=True)
-    report_filename = test_file_name + " - " + datetime.now().strftime("%d-%m-%Y %H-%M-%S") + ".html"
-    config.option.htmlpath = report_dir + report_filename
+
+    # Generate the report filename with timestamp
+    report_filename = f"{test_file_name} - {datetime.now().strftime('%d-%m-%Y %H-%M-%S')}.html"
+
+    # Ensure the HTML report path is set correctly
+    html_path = os.path.join(report_dir, report_filename)
+    config.option.htmlpath = html_path

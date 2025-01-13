@@ -1,5 +1,4 @@
 pytest
 pytest-html
 pytest-xdist
-openpyxl
 selenium

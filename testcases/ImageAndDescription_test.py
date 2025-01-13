@@ -1,7 +1,6 @@
 import pytest
-from pageObjects.imageanddescriptions import ImageAndDescription
+from pageObjects.image_Productdescriptions_AddtoCart import Image_ProductDescription_AddtoCart
 from pageObjects.ExtractProductsDetails import ProductDetails
-from pageObjects.AddToCart import AddToCart
 from utilities.readProperties import ReadConfig
 from utilities.customLogger import LogGen
 
@@ -11,83 +10,90 @@ class Test_Image_And_Description:
     logger = LogGen.loggen()
 
     test_data = [
-        "laptop",  # PASSED
-        "MOBILE",  # PASSED
-        "6763bhjhdh",  # FAILED
+        "laptop",  # This test case should pass
+        "6763bhjhdh",  # This test case should fail
     ]
 
     @pytest.mark.parametrize("item", test_data)
     def test_image_functionality(self, setup, item):
         self.logger.info(f"Starting image functionality test for item: {item}")
         self.driver = setup
-
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
 
-        self.search_item = ProductDetails(self.driver)
-        self.search_res = self.search_item.search_box(item)
-        if self.search_res:
-            self.addcart = AddToCart(self.driver)
-            self.productLinks = self.addcart.get_product_links()
-            for link in self.productLinks[:2]:
-                main_window = self.driver.current_window_handle
-                link.click()
-                all_windows = self.driver.window_handles
-
-                # Switch to the new window
-                for window in all_windows:
-                    if window != main_window:
-                        self.driver.switch_to.window(window)
-                        self.image = ImageAndDescription(self.driver)
-                        if self.image.is_image_displayed():
-                            self.logger.info("Image functionality validated successfully.")
-                            self.driver.close()
-                            assert True
-                        else:
-                            self.logger.error("Image functionality validation failed.")
-                            self.driver.close()
-                            assert False
-                        break
-                self.driver.switch_to.window(main_window)
+        # Extract product details using the ProductDetails class
+        product_page = ProductDetails(self.driver)
+        if product_page.search_product(item):
+            product_details = product_page.get_product_details()
+            if product_details:
+                self.logger.info(f"Validating image functionality for {len(product_details)} products.")
+                for product in product_details:
+                    self.validate_product_image(product["url"])
+            else:
+                self.logger.warning("No product details found for validation.")
+                assert False, "No products found to validate image functionality."
         else:
-            self.logger.error(f"Item '{item}' is not available.")
-            assert False, f"Item '{item}' is not available."
+            self.logger.error(f"Search failed or no results for item '{item}'.")
+            assert False, f"Search failed for item '{item}'."
 
     @pytest.mark.parametrize("item", test_data)
-    def test_productdescription(self, setup, item):
+    def test_product_description(self, setup, item):
         self.logger.info(f"Starting product description test for item: {item}")
         self.driver = setup
-
         self.driver.get(self.baseURL)
         self.driver.maximize_window()
 
-        self.search_item = ProductDetails(self.driver)
-        self.search_res = self.search_item.search_box(item)
-
-        if self.search_res:
-            self.addcart = AddToCart(self.driver)
-            self.productLinks = self.addcart.get_product_links()
-            for link in self.productLinks[:2]:
-                main_window = self.driver.current_window_handle
-                link.click()
-                all_windows = self.driver.window_handles
-
-                # Switch to the new window
-                for window in all_windows:
-                    if window != main_window:
-                        self.driver.switch_to.window(window)
-                        self.image = ImageAndDescription(self.driver)
-
-                        if self.image.is_product_detail_section_displayed():
-                            self.logger.info("Product description validated successfully.")
-                            self.driver.close()
-                            assert True
-                        else:
-                            self.logger.error("Product description validation failed.")
-                            self.driver.close()
-                            assert False
-                        break
-                self.driver.switch_to.window(main_window)
+        # Extract product details using the ProductDetails class
+        product_page = ProductDetails(self.driver)
+        if product_page.search_product(item):
+            product_details = product_page.get_product_details()
+            if product_details:
+                self.logger.info("Validating product description functionality.")
+                for product in product_details:
+                    self.validate_product_description(product["url"])
+            else:
+                self.logger.warning("No product details found for validation.")
+                assert False, "No products found to validate description functionality."
         else:
-            self.logger.error(f"Item '{item}' is not available.")
-            assert False, f"Item '{item}' is not available."
+            self.logger.error(f"Search failed or no results for item '{item}'.")
+            assert False, f"Search failed for item '{item}'."
+
+    def validate_product_image(self, product_url):
+        self.logger.info(f"Validating image functionality for product URL: {product_url}")
+        main_window = self.driver.current_window_handle
+        self.driver.execute_script("window.open(arguments[0]);", product_url)
+        all_windows = self.driver.window_handles
+
+        for window in all_windows:
+            if window != main_window:
+                self.driver.switch_to.window(window)
+                try:
+                    image_check = Image_ProductDescription_AddtoCart(self.driver)
+                    assert image_check.is_image_displayed(), "Image is not visible for the product."
+                    self.logger.info("Image functionality validated successfully.")
+                except Exception as e:
+                    self.logger.error(f"Image validation failed: {e}")
+                    assert False, "Image validation failed."
+                finally:
+                    self.driver.close()
+                    self.driver.switch_to.window(main_window)
+
+    def validate_product_description(self, product_url):
+        self.logger.info(f"Validating description functionality for product URL: {product_url}")
+        main_window = self.driver.current_window_handle
+        self.driver.execute_script("window.open(arguments[0]);", product_url)
+        all_windows = self.driver.window_handles
+
+        for window in all_windows:
+            if window != main_window:
+                self.driver.switch_to.window(window)
+                try:
+                    description_check = Image_ProductDescription_AddtoCart(self.driver)
+                    assert description_check.is_product_detail_section_displayed(), "Product description is not visible."
+                    self.logger.info("Product description validated successfully.")
+                except Exception as e:
+                    self.logger.error(f"Description validation failed: {e}")
+                    assert False, "Description validation failed."
+                finally:
+                    self.driver.close()
+                    self.driver.switch_to.window(main_window)

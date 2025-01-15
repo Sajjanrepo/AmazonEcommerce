@@ -1,14 +1,10 @@
-2025-01-14 01:17:18,384: INFO: Starting Add to Cart functionality test for item: laptop
-2025-01-14 01:17:19,987: INFO: Searching for item: laptop
-2025-01-14 01:17:21,986: INFO: Product found for laptop. Fetching details...
-2025-01-14 01:17:23,320: INFO: Testing Add to Cart for product link: https://www.amazon.in/Refurbished-Lenovo-ThinkPad-Bluetooth-Graphics/dp/B0DMTPY8PJ/ref=sr_1_3?dib=eyJ2IjoiMSJ9.S2N2m6TdmjxhoG6WAStXM2J-0ZiNILJr-BoS2FjhKXSoLBsQcLDwzSIQGoH3_jS1sO1fR_KEt4DDU9Sz1uBYuT-vr1N57v3cUu3h-_QB3Z9lh_HmbqBHL9E9JnMRq2S7EFHJM0psm-haqd0rnqn9IqslG0gwT1Ss35zvKid6pa7u1QfKtE7l9lFjoFtYa47v3WsQNj7Zm5tZtQaOMJzq-LT2A9irGhfQ2B4qJF0tVrE.ASe_JuAdmYap_kMyfTSUyvwR2HdhvXcoetQiSsnwzzY&dib_tag=se&keywords=laptop&qid=1736797640&sr=8-3
-2025-01-14 01:17:23,392: INFO: Switched to product page: https://www.amazon.in/Refurbished-Lenovo-ThinkPad-Bluetooth-Graphics/dp/B0DMTPY8PJ/ref=sr_1_3?dib=eyJ2IjoiMSJ9.S2N2m6TdmjxhoG6WAStXM2J-0ZiNILJr-BoS2FjhKXSoLBsQcLDwzSIQGoH3_jS1sO1fR_KEt4DDU9Sz1uBYuT-vr1N57v3cUu3h-_QB3Z9lh_HmbqBHL9E9JnMRq2S7EFHJM0psm-haqd0rnqn9IqslG0gwT1Ss35zvKid6pa7u1QfKtE7l9lFjoFtYa47v3WsQNj7Zm5tZtQaOMJzq-LT2A9irGhfQ2B4qJF0tVrE.ASe_JuAdmYap_kMyfTSUyvwR2HdhvXcoetQiSsnwzzY&dib_tag=se&keywords=laptop&qid=1736797640&sr=8-3
-2025-01-14 01:17:24,959: INFO: 'Add to Cart' button is visible for laptop.
-2025-01-14 01:17:24,960: INFO: Closing product tab.
-2025-01-14 01:17:25,098: INFO: Testing Add to Cart for product link: https://www.amazon.in/HP-i3-1215U-15-6-inch-Graphics-Speakers/dp/B0BP2M7CCS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.S2N2m6TdmjxhoG6WAStXM2J-0ZiNILJr-BoS2FjhKXSoLBsQcLDwzSIQGoH3_jS1sO1fR_KEt4DDU9Sz1uBYuT-vr1N57v3cUu3h-_QB3Z9lh_HmbqBHL9E9JnMRq2S7EFHJM0psm-haqd0rnqn9IqslG0gwT1Ss35zvKid6pa7u1QfKtE7l9lFjoFtYa47v3WsQNj7Zm5tZtQaOMJzq-LT2A9irGhfQ2B4qJF0tVrE.ASe_JuAdmYap_kMyfTSUyvwR2HdhvXcoetQiSsnwzzY&dib_tag=se&keywords=laptop&qid=1736797640&sr=8-4
-2025-01-14 01:17:25,174: INFO: Switched to product page: https://www.amazon.in/HP-i3-1215U-15-6-inch-Graphics-Speakers/dp/B0BP2M7CCS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.S2N2m6TdmjxhoG6WAStXM2J-0ZiNILJr-BoS2FjhKXSoLBsQcLDwzSIQGoH3_jS1sO1fR_KEt4DDU9Sz1uBYuT-vr1N57v3cUu3h-_QB3Z9lh_HmbqBHL9E9JnMRq2S7EFHJM0psm-haqd0rnqn9IqslG0gwT1Ss35zvKid6pa7u1QfKtE7l9lFjoFtYa47v3WsQNj7Zm5tZtQaOMJzq-LT2A9irGhfQ2B4qJF0tVrE.ASe_JuAdmYap_kMyfTSUyvwR2HdhvXcoetQiSsnwzzY&dib_tag=se&keywords=laptop&qid=1736797640&sr=8-4
-2025-01-14 01:17:27,310: ERROR: 'Add to Cart' button not found for laptop.
-2025-01-14 01:17:27,310: INFO: Closing product tab.
-2025-01-14 01:17:27,410: INFO: Starting Add to Cart functionality test for item: 19dksdj8u8
-2025-01-14 01:17:27,920: INFO: Searching for item: 19dksdj8u8
-2025-01-14 01:17:39,654: ERROR: Search failed. No results found for 19dksdj8u8.
+2025-01-15 15:40:55,468: INFO: Starting Add to Cart functionality test for item: laptop
+2025-01-15 15:40:57,186: INFO: Searching for item: laptop
+2025-01-15 15:40:59,650: INFO: Product found for laptop. Fetching details...
+2025-01-15 15:41:00,214: INFO: Testing Add to Cart for product link: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ti-ZYlqFtHg2BYrYGnirRPUA8rD-hKaq96Z5dFU3oOKcrG2XRK7RJkXzMszHC6ox3ABpUpnFdNvcPl5EwIIKVZZzPMmSA1XnS8YeNLbNA7TLr3DGlMY9nyVSHOIECY_4snuWnP2tmUd878qylarL_344HPnIk6o2N4lL6DYvf3TQN_cck4RWHLCpg7qfrniK3ap05iobW7cxrBzmI0DGqbyMAQIrY9IXWVjczhKGxyw.eSSkcWSofkP-Bjie06qDn5IGob4uLGw2Z8Dk6YZ4nHI&dib_tag=se&keywords=laptop&qid=1736935859&sr=8-3
+2025-01-15 15:41:00,284: INFO: Switched to product page: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ti-ZYlqFtHg2BYrYGnirRPUA8rD-hKaq96Z5dFU3oOKcrG2XRK7RJkXzMszHC6ox3ABpUpnFdNvcPl5EwIIKVZZzPMmSA1XnS8YeNLbNA7TLr3DGlMY9nyVSHOIECY_4snuWnP2tmUd878qylarL_344HPnIk6o2N4lL6DYvf3TQN_cck4RWHLCpg7qfrniK3ap05iobW7cxrBzmI0DGqbyMAQIrY9IXWVjczhKGxyw.eSSkcWSofkP-Bjie06qDn5IGob4uLGw2Z8Dk6YZ4nHI&dib_tag=se&keywords=laptop&qid=1736935859&sr=8-3
+2025-01-15 15:41:14,606: ERROR: 'Add to Cart' button not found for laptop.
+2025-01-15 15:41:14,606: INFO: Closing product tab.
+2025-01-15 15:41:14,697: INFO: Starting Add to Cart functionality test for item: 19dksdj8u8
+2025-01-15 15:41:15,905: INFO: Searching for item: 19dksdj8u8
+2025-01-15 15:41:28,292: ERROR: Search failed. No results found for 19dksdj8u8.

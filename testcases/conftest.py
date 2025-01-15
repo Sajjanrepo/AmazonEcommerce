@@ -1,11 +1,10 @@
-import os
 import pytest
 from selenium import webdriver
-from datetime import datetime
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
+from selenium.webdriver.firefox.options import Options
 
 
 @pytest.fixture(scope="session")
@@ -30,10 +29,13 @@ def setup(browser):
 def get_driver(browser, logger):
     if browser == "chrome":
         chrome_driver_path = ReadConfig.getchromedriver()
-        options = Options()
-        options.binary_location = ReadConfig.getChromePath()
+        options = webdriver.ChromeOptions()
+
+        # Create the Service object with the ChromeDriver path
         serv_obj = Service(executable_path=chrome_driver_path)
-        driver = webdriver.Firefox(service=serv_obj, options=options)
+
+        # Initialize the ChromeDriver
+        driver = webdriver.Chrome(service=serv_obj, options=options)
         return driver
 
         # For parallel run on Selenium Grid
@@ -59,7 +61,7 @@ def get_driver(browser, logger):
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="firefox")
+    parser.addoption("--browser", action="store", default="chrome")
 
 
 @pytest.fixture(scope="session")

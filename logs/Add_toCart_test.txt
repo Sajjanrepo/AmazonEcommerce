@@ -1,10 +1,7 @@
-2025-01-15 15:40:55,468: INFO: Starting Add to Cart functionality test for item: laptop
-2025-01-15 15:40:57,186: INFO: Searching for item: laptop
-2025-01-15 15:40:59,650: INFO: Product found for laptop. Fetching details...
-2025-01-15 15:41:00,214: INFO: Testing Add to Cart for product link: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ti-ZYlqFtHg2BYrYGnirRPUA8rD-hKaq96Z5dFU3oOKcrG2XRK7RJkXzMszHC6ox3ABpUpnFdNvcPl5EwIIKVZZzPMmSA1XnS8YeNLbNA7TLr3DGlMY9nyVSHOIECY_4snuWnP2tmUd878qylarL_344HPnIk6o2N4lL6DYvf3TQN_cck4RWHLCpg7qfrniK3ap05iobW7cxrBzmI0DGqbyMAQIrY9IXWVjczhKGxyw.eSSkcWSofkP-Bjie06qDn5IGob4uLGw2Z8Dk6YZ4nHI&dib_tag=se&keywords=laptop&qid=1736935859&sr=8-3
-2025-01-15 15:41:00,284: INFO: Switched to product page: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ti-ZYlqFtHg2BYrYGnirRPUA8rD-hKaq96Z5dFU3oOKcrG2XRK7RJkXzMszHC6ox3ABpUpnFdNvcPl5EwIIKVZZzPMmSA1XnS8YeNLbNA7TLr3DGlMY9nyVSHOIECY_4snuWnP2tmUd878qylarL_344HPnIk6o2N4lL6DYvf3TQN_cck4RWHLCpg7qfrniK3ap05iobW7cxrBzmI0DGqbyMAQIrY9IXWVjczhKGxyw.eSSkcWSofkP-Bjie06qDn5IGob4uLGw2Z8Dk6YZ4nHI&dib_tag=se&keywords=laptop&qid=1736935859&sr=8-3
-2025-01-15 15:41:14,606: ERROR: 'Add to Cart' button not found for laptop.
-2025-01-15 15:41:14,606: INFO: Closing product tab.
-2025-01-15 15:41:14,697: INFO: Starting Add to Cart functionality test for item: 19dksdj8u8
-2025-01-15 15:41:15,905: INFO: Searching for item: 19dksdj8u8
-2025-01-15 15:41:28,292: ERROR: Search failed. No results found for 19dksdj8u8.
+2025-01-15 21:51:29,949: INFO: Starting Add to Cart functionality test for item: laptop
+2025-01-15 21:51:31,597: INFO: Searching for item: laptop
+2025-01-15 21:51:34,706: INFO: Product found for laptop. Fetching details...
+2025-01-15 21:51:35,307: INFO: Testing Add to Cart for product link: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.wP8-50EigEoi-zRMfROZwortanrrGlxoDIuY4snP_JsMOPXAVIrvbRc3Ik6QLIQF3ABpUpnFdNvcPl5EwIIKVQtpMGqu9d1LsEPwA75BwZ0zlCWBFWi8jk4ZZlXxUEaBYu9ETtVy14cgQosUcsPQCxSLPoFS50NcuB_MzW0Hzqf9JBoJSsuNy27WWYIhK9CFl0OXKj7rLrErhcLqnUlJRbyMAQIrY9IXWVjczhKGxyw.Lo52jpKNfW4QeabOqwKpvFEIwaWnhh1sHPBaXnnJfMs&dib_tag=se&keywords=laptop&qid=1736958094&sr=8-3
+2025-01-15 21:51:35,365: INFO: Switched to product page: https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=sr_1_3?dib=eyJ2IjoiMSJ9.wP8-50EigEoi-zRMfROZwortanrrGlxoDIuY4snP_JsMOPXAVIrvbRc3Ik6QLIQF3ABpUpnFdNvcPl5EwIIKVQtpMGqu9d1LsEPwA75BwZ0zlCWBFWi8jk4ZZlXxUEaBYu9ETtVy14cgQosUcsPQCxSLPoFS50NcuB_MzW0Hzqf9JBoJSsuNy27WWYIhK9CFl0OXKj7rLrErhcLqnUlJRbyMAQIrY9IXWVjczhKGxyw.Lo52jpKNfW4QeabOqwKpvFEIwaWnhh1sHPBaXnnJfMs&dib_tag=se&keywords=laptop&qid=1736958094&sr=8-3
+2025-01-15 21:51:50,044: ERROR: 'Add to Cart' button not found for laptop.
+2025-01-15 21:51:50,044: INFO: Closing product tab.

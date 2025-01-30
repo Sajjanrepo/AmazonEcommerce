@@ -56,7 +56,7 @@ This project involves creating Selenium automation scripts in Python to validate
 ---
 
 ### Running the Script
-1. **Run test cases using Pytest:(By default it will use firefox browser)**
+1. **Run test cases using Pytest:(By default it will use chrome browser)**
    pytest -s -v .\testcases\<test_case_test.py>  --browser <browser_name>
 
 2. **Run parallel test cases using Pytest:**
@@ -86,6 +86,7 @@ This project involves creating Selenium automation scripts in Python to validate
    - Include detailed comments in the CSV file for each test case.
    - Make the changes in conftest.py file for running test script for parallel testing (Just uncomment the commented line under browser and change the hub ip as per your hub)
    - Report will be generated with filename initials under reports directory
+   - Mention the driver path Correctly
 ---
 
 This project validates key functionalities of Amazon's search and crawling features, providing a robust and scalable automation testing framework using Python and Selenium.

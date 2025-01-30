@@ -9,6 +9,7 @@ class TestScreenSizes:
     item = "mobile"  # Test case that should pass
 
     def setup_test_environment(self, setup, width, height):
+        self.logger.info("Starting Responsiveness test for Amazon Website")
         self.logger.info(f"Initializing test for screen size: {width}x{height}")
         self.driver = setup
         self.driver.get(self.baseURL)
